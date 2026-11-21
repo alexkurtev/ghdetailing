@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GH Detailing | Ямбол</title>
+<meta name="description" content="GH Detailing в Ямбол: полиране, керамични покрития, детайлно почистване, интериор и екстериор, защита и поддръжка.">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c;
+    --bg-2:#111113;
+    --card:#151517;
+    --line:rgba(201,153,58,.28);
+    --gold:#c9993a;
+    --gold-light:#f0c566;
+    --gold-dark:#8a6420;
+    --text:#f4f4f2;
+    --muted:#a2a2a6;
+    --gold-grad:linear-gradient(135deg,#f0c566 0%,#c9993a 45%,#8a6420 100%);
+    --silver-grad:linear-gradient(135deg,#ffffff 0%,#b9b9bd 50%,#6d6d72 100%);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+  /* Header */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    background:rgba(11,11,12,.78);backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.05);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
+  .mark{font-size:1.7rem;font-weight:800;line-height:1;letter-spacing:-.04em;font-style:italic}
+  .mark .g{background:var(--silver-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .mark .h{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .logo small{
+    font-size:.68rem;font-weight:500;letter-spacing:.42em;color:var(--text);
+    border-left:1px solid var(--line);padding-left:10px;text-transform:uppercase
+  }
+  nav ul{display:flex;gap:30px;list-style:none}
+  nav a{
+    font-size:.74rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);transition:color .25s
+  }
+  nav a:hover{color:var(--gold-light)}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 28px;border-radius:2px;font-size:.78rem;font-weight:700;
+    letter-spacing:.18em;text-transform:uppercase;cursor:pointer;border:1px solid transparent;
+    transition:transform .25s,box-shadow .25s,background .25s,color .25s
+  }
+  .btn-gold{background:var(--gold-grad);color:#14110a;box-shadow:0 8px 30px -10px rgba(201,153,58,.6)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 36px -10px rgba(240,197,102,.7)}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+  .btn-ghost:hover{border-color:var(--gold-light);color:var(--gold-light);transform:translateY(-2px)}
+  .nav .btn{padding:10px 18px;font-size:.7rem}
+
+  /* Hero */
+  .hero{
+    position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;
+    padding:120px 0 80px;overflow:hidden;
+    background:
+      radial-gradient(900px 500px at 78% 30%,rgba(201,153,58,.16),transparent 60%),
+      radial-gradient(700px 500px at 10% 100%,rgba(255,255,255,.05),transparent 60%),
+      var(--bg);
+  }
+  .hero::before{ /* diagonal gold line like on the card */
+    content:"";position:absolute;left:-10%;right:-10%;top:58%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold-light) 60%,transparent);
+    transform:rotate(-12deg);opacity:.7
+  }
+  .hero::after{ /* faint car-light shape */
+    content:"";position:absolute;right:-8%;top:8%;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.1),rgba(255,255,255,.02) 40%,transparent 65%);
+    filter:blur(6px)
+  }
+  .hero .wrap{position:relative;z-index:2}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:14px;font-size:.72rem;font-weight:600;
+    letter-spacing:.38em;text-transform:uppercase;color:var(--gold-light);margin-bottom:26px
+  }
+  .eyebrow::before{content:"";width:46px;height:1px;background:var(--gold-grad)}
+  h1{
+    font-size:clamp(2.6rem,8vw,6rem);line-height:1.02;font-weight:800;letter-spacing:-.02em;
+    text-transform:uppercase
+  }
+  h1 .gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .silver{background:var(--silver-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{max-width:560px;margin-top:26px;color:var(--muted);font-size:clamp(1rem,2.2vw,1.12rem);font-weight:300}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:34px;margin-top:64px;padding-top:26px;
+    border-top:1px solid rgba(255,255,255,.07);max-width:640px
+  }
+  .hero-meta div{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+  .hero-meta b{display:block;color:var(--text);font-size:.9rem;letter-spacing:.08em;margin-top:4px;font-weight:600}
+
+  /* Sections */
+  section{padding:110px 0}
+  .head{max-width:640px;margin-bottom:56px}
+  .head h2{
+    font-size:clamp(1.8rem,4.6vw,3rem);font-weight:800;text-transform:uppercase;
+    letter-spacing:-.01em;line-height:1.1
+  }
+  .head h2 span{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .head p{margin-top:16px;color:var(--muted);font-weight:300}
+
+  /* Services */
+  #uslugi{background:var(--bg-2);border-block:1px solid rgba(255,255,255,.04)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    position:relative;background:var(--card);padding:38px 30px 34px;
+    border:1px solid rgba(255,255,255,.06);border-radius:4px;overflow:hidden;
+    transition:transform .35s,border-color .35s,box-shadow .35s
+  }
+  .card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--gold-grad);
+    transform:scaleX(0);transform-origin:left;transition:transform .45s
+  }
+  .card:hover{transform:translateY(-6px);border-color:var(--line);box-shadow:0 24px 50px -28px rgba(201,153,58,.5)}
+  .card:hover::before{transform:scaleX(1)}
+  .hex{
+    width:62px;height:70px;display:grid;place-items:center;margin-bottom:26px;
+    background:var(--gold-grad);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  }
+  .hex i{
+    width:calc(100% - 3px);height:calc(100% - 3px);display:grid;place-items:center;background:var(--card);
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  }
+  .hex svg{width:26px;height:26px;stroke:var(--gold-light);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:1rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .card p{color:var(--muted);font-size:.93rem;font-weight:300}
+  .card.wide{grid-column:span 1}
+
+  /* Quote band */
+  .band{
+    text-align:center;padding:100px 0;
+    background:
+      linear-gradient(180deg,rgba(11,11,12,.9),rgba(11,11,12,.9)),
+      radial-gradient(700px 300px at 50% 50%,rgba(201,153,58,.2),transparent 70%),var(--bg);
+  }
+  .band p{
+    font-size:clamp(1.3rem,4vw,2.3rem);font-weight:300;letter-spacing:.34em;text-transform:uppercase;
+    line-height:1.5
+  }
+  .band p b{font-weight:700;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .band .rule{width:90px;height:2px;background:var(--gold-grad);margin:30px auto 0}
+
+  /* Process */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+  .step{padding-top:22px;border-top:1px solid var(--line);counter-increment:s}
+  .step::before{
+    content:"0" counter(s);display:block;font-size:2.2rem;font-weight:800;margin-bottom:10px;
+    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent
+  }
+  .step h4{font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+  .step p{color:var(--muted);font-size:.9rem;font-weight:300}
+
+  /* Contact */
+  #kontakt{background:var(--bg-2);border-top:1px solid rgba(255,255,255,.04)}
+  .contact{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+  .contact-list{display:grid;gap:18px}
+  .row{
+    display:flex;align-items:center;gap:20px;padding:22px 24px;background:var(--card);
+    border:1px solid rgba(255,255,255,.06);border-radius:4px;
+    transition:border-color .3s,transform .3s
+  }
+  a.row:hover{border-color:var(--gold);transform:translateX(6px)}
+  .ico{
+    flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;
+    border:1px solid var(--gold)
+  }
+  .ico svg{width:22px;height:22px;stroke:var(--gold-light);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .row small{display:block;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .row strong{font-size:1.08rem;font-weight:600;letter-spacing:.04em}
+
+  footer{padding:34px 0;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:var(--muted);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase}
+  footer b{color:var(--gold-light);font-weight:600}
+
+  /* Mobile call bar */
+  .callbar{display:none}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .rv.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  /* Responsive */
+  @media (max-width:960px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr);gap:34px 22px}
+    .contact{grid-template-columns:1fr;gap:36px}
+  }
+  @media (max-width:720px){
+    nav ul{display:none}
+    .logo small{display:none}
+    section{padding:80px 0}
+    .hero{padding:110px 0 70px}
+    .hero::before{top:62%}
+    .hero-meta{gap:22px;margin-top:48px}
+    .grid{grid-template-columns:1fr}
+    .card{padding:30px 24px}
+    .band{padding:76px 0}
+    .band p{letter-spacing:.2em}
+    .cta .btn{flex:1 1 100%}
+    body{padding-bottom:64px}
+    .callbar{
+      display:flex;position:fixed;inset:auto 0 0 0;z-index:60;
+      background:var(--gold-grad);color:#14110a;justify-content:center;align-items:center;gap:10px;
+      height:56px;font-weight:700;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase
+    }
+    .callbar svg{width:18px;height:18px;stroke:#14110a;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  }
+  @media (max-width:420px){
+    .steps{grid-template-columns:1fr}
+    .row{padding:18px}
+    .row strong{font-size:.98rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="GH Detailing">
+      <span class="mark"><span class="g">G</span><span class="h">H</span></span>
+      <small>Detailing</small>
+    </a>
+    <nav aria-label="Основна навигация">
+      <ul>
+        <li><a href="#uslugi">Услуги</a></li>
+        <li><a href="#podhod">Подход</a></li>
+        <li><a href="#kontakt">Контакти</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-gold" href="tel:+359894374495">Обади се</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow rv">Автодетайлинг · Ямбол</div>
+      <h1 class="rv"><span class="silver">GH</span> <span class="gold">Detailing</span></h1>
+      <p class="lead rv">Детайлите правят разликата. Грижа за вашия автомобил с внимание към всяка повърхност, от боята до интериора.</p>
+      <div class="cta rv">
+        <a class="btn btn-gold" href="tel:+359894374495">0894 37 44 95</a>
+        <a class="btn btn-ghost" href="#uslugi">Виж услугите</a>
+      </div>
+      <div class="hero-meta rv">
+        <div>Локация<b>Ямбол, България</b></div>
+        <div>Телефон<b>0894 37 44 95</b></div>
+        <div>Instagram<b>@gh.detailing</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="uslugi">
+    <div class="wrap">
+      <div class="head rv">
+        <h2>Нашите <span>услуги</span></h2>
+        <p>Пълна грижа за автомобила: възстановяване, защита и поддръжка на едно място.</p>
+      </div>
+      <div class="grid">
+        <article class="card rv">
+          <div class="hex"><i><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4v4M12 16v4M4 12h4M16 12h4"/><circle cx="12" cy="12" r="2"/></svg></i></div>
+          <h3>Полиране</h3>
+          <p>Премахване на фини драскотини и матови участъци за дълбок, наситен блясък на боята.</p>
+        </article>
+        <article class="card rv">
+          <div class="hex"><i><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></i></div>
+          <h3>Керамични покрития</h3>
+          <p>Дълготрайна защита на боята с хидрофобен ефект, по-лесно почистване и траен блясък.</p>
+        </article>
+        <article class="card rv">
+          <div class="hex"><i><svg viewBox="0 0 24 24"><path d="M5 20h14M8 20V9a4 4 0 0 1 8 0v11"/><path d="M12 5V3"/></svg></i></div>
+          <h3>Детайлно почистване</h3>
+          <p>Щателно почистване на труднодостъпни места, фуги и повърхности, които обикновената мивка пропуска.</p>
+        </article>
+        <article class="card rv">
+          <div class="hex"><i><svg viewBox="0 0 24 24"><path d="M4 15l2-6a2 2 0 0 1 2-1.4h8A2 2 0 0 1 18 9l2 6v4h-3v-2H7v2H4z"/><circle cx="8" cy="14" r=".8"/><circle cx="16" cy="14" r=".8"/></svg></i></div>
+          <h3>Интериор и екстериор</h3>
+          <p>Цялостно обгрижване на купето и каросерията, така че колата да изглежда и да се усеща като нова.</p>
+        </article>
+        <article class="card rv">
+          <div class="hex"><i><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i></div>
+          <h3>Защита и поддръжка</h3>
+          <p>Продукти и регулярна грижа, които пазят резултата във времето и удължават живота на покритията.</p>
+        </article>
+        <article class="card rv" style="display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,rgba(201,153,58,.14),rgba(21,21,23,1) 70%);border-color:var(--line)">
+          <h3 style="margin-bottom:10px">Нуждаете се от оферта?</h3>
+          <p style="margin-bottom:22px">Обадете се или ни пишете в Instagram и ще се разберем за вашия автомобил.</p>
+          <a class="btn btn-gold" href="#kontakt" style="align-self:flex-start">Свържи се</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap rv">
+      <p>Details <b>make</b> the difference</p>
+      <div class="rule"></div>
+    </div>
+  </section>
+
+  <section id="podhod">
+    <div class="wrap">
+      <div class="head rv">
+        <h2>Как <span>работим</span></h2>
+        <p>Ясен процес, внимание към всеки етап и резултат, който се вижда.</p>
+      </div>
+      <div class="steps">
+        <div class="step rv"><h4>Оглед</h4><p>Преглеждаме състоянието на боята и интериора и уточняваме какво ви е нужно.</p></div>
+        <div class="step rv"><h4>Подготовка</h4><p>Щателно почистване и подготовка на повърхностите преди всяка обработка.</p></div>
+        <div class="step rv"><h4>Обработка</h4><p>Полиране, покрития и детайлна работа с подходящи материали и техники.</p></div>
+        <div class="step rv"><h4>Защита</h4><p>Съвети за поддръжка, за да запазите резултата възможно най-дълго.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap contact">
+      <div class="rv">
+        <div class="head" style="margin-bottom:0">
+          <h2>Свържете се <span>с нас</span></h2>
+          <p>Запазете час или задайте въпрос. Най-бързо ще ни откриете по телефона или в Instagram.</p>
+        </div>
+      </div>
+      <div class="contact-list rv">
+        <a class="row" href="tel:+359894374495">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+          <span><small>Телефон</small><strong>0894 37 44 95</strong></span>
+        </a>
+        <div class="row">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <span><small>Локация</small><strong>Ямбол, България</strong></span>
+        </div>
+        <a class="row" href="https://instagram.com/gh.detailing" target="_blank" rel="noopener">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></span>
+          <span><small>Instagram</small><strong>gh.detailing</strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="y">2026</span> <b>GH Detailing</b> · Ямбол</div>
+</footer>
+
+<a class="callbar" href="tel:+359894374495" aria-label="Обади се">
+  <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+  Обади се сега
+</a>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach((el, i) => { el.style.transitionDelay = (i % 3) * 80 + 'ms'; io.observe(el); });
+  } else {
+    els.forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
